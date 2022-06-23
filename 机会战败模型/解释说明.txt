@@ -1,0 +1,28 @@
+一、Data Preparation: 
+读取所有试乘试驾表, 输出合并表test_drive_ttl.csv 1.
+读取所有订单表，输出合并表order_ttl.csv 2.
+读取所有订单跟进表，输出合并表oppo_fol_ttl.csv 3.
+读取所有机会表，输出合并表oppo_combined 4.
+读取所有客流表，输出合并表customer_flow_total 5.
+
+二 、Feature_Engineering
+1. 生成客流表与订单表宽表
+读取 2. 4. 5. 表， 输出含有正样本手机号, uid 及 category（标签)的all_sample.csv 并生成客流表与订单表与机会表合并的df_merged_opportunity.pkl
+
+生成df_aggregated_Harry为最初宽表 生成test_drive_agg_final  为第二稿宽表 含客流表与机会表所需正负样本宽表变量
+
+2. 生成试乘试驾表宽表
+读取1. 生成test_drive_agg_final 为试乘试驾宽表
+
+3. 读取test_drive_agg_final  test_drive_agg_final 互相合并 形成三表宽表，最后并增加新字段
+最终形成df_12的pickle文件 df_final_attributes.pkl
+
+其中df__xiafa.pkl 为下发字段
+
+三、time_decay algorithm  及 建模
+
+读取df_final_attributes.pkl， 并生成含概率 time-delay 及打分的 df_large.pkl
+
+
+
+
